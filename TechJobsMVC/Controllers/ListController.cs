@@ -28,6 +28,7 @@ namespace TechJobsMVC.Controllers
             {"coreCompetency", JobData.GetAllCoreCompetencies()}
         };
 
+        //renders view of table clickable links 
         public IActionResult Index()
         {
             ViewBag.columns = ColumnChoices;
@@ -41,7 +42,7 @@ namespace TechJobsMVC.Controllers
         }
 
         // list jobs by column and value
-        public IActionResult Jobs(string column, string value)
+        public IActionResult Jobs(string column, string value)  //2 query parameters 
         {
             List<Job> jobs;
             if (column.ToLower().Equals("all"))
